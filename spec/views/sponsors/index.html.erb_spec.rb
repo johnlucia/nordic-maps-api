@@ -5,8 +5,8 @@ RSpec.describe "sponsors/index", type: :view do
     assign(:sponsors, [
       Sponsor.create!(
         :name => "Name",
-        :logoUrl => "Logo Url",
-        :linkUrl => "Link Url",
+        :logo_url => "Logo Url",
+        :link_url => "Link Url",
         :sponsorship_level_id => 2,
         :active => false,
         :description => "MyText",
@@ -14,8 +14,8 @@ RSpec.describe "sponsors/index", type: :view do
       ),
       Sponsor.create!(
         :name => "Name",
-        :logoUrl => "Logo Url",
-        :linkUrl => "Link Url",
+        :logo_url => "Logo Url",
+        :link_url => "Link Url",
         :sponsorship_level_id => 2,
         :active => false,
         :description => "MyText",

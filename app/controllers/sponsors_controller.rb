@@ -69,6 +69,6 @@ class SponsorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sponsor_params
-      params.require(:sponsor).permit(:name, :logoUrl, :linkUrl, :sponsorship_level_id, :active, :description, :notes)
+      params.require(:sponsor).permit(:name, :logo_url, :link_url, :sponsorship_level_id, :active, :description, :notes)
     end
 end

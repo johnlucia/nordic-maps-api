@@ -4,8 +4,8 @@ RSpec.describe "sponsors/new", type: :view do
   before(:each) do
     assign(:sponsor, Sponsor.new(
       :name => "MyString",
-      :logoUrl => "MyString",
-      :linkUrl => "MyString",
+      :logo_url => "MyString",
+      :link_url => "MyString",
       :sponsorship_level_id => 1,
       :active => false,
       :description => "MyText",
@@ -20,9 +20,9 @@ RSpec.describe "sponsors/new", type: :view do
 
       assert_select "input[name=?]", "sponsor[name]"
 
-      assert_select "input[name=?]", "sponsor[logoUrl]"
+      assert_select "input[name=?]", "sponsor[logo_url]"
 
-      assert_select "input[name=?]", "sponsor[linkUrl]"
+      assert_select "input[name=?]", "sponsor[link_url]"
 
       assert_select "input[name=?]", "sponsor[sponsorship_level_id]"
 

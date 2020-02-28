@@ -7,8 +7,8 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:logoUrl) %></th>
-      <th><%= model_class.human_attribute_name(:linkUrl) %></th>
+      <th><%= model_class.human_attribute_name(:logo_url) %></th>
+      <th><%= model_class.human_attribute_name(:link_url) %></th>
       <th><%= model_class.human_attribute_name(:sponsorship_level_id) %></th>
       <th><%= model_class.human_attribute_name(:active) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
@@ -22,8 +22,8 @@
       <tr>
         <td><%= link_to sponsor.id, sponsor_path(sponsor) %></td>
         <td><%= sponsor.name %></td>
-        <td><%= sponsor.logoUrl %></td>
-        <td><%= sponsor.linkUrl %></td>
+        <td><%= sponsor.logo_url %></td>
+        <td><%= sponsor.link_url %></td>
         <td><%= sponsor.sponsorship_level.name %></td>
         <td><%= sponsor.active %></td>
         <td><%= sponsor.description %></td>

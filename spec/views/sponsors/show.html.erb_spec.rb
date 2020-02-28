@@ -4,8 +4,8 @@ RSpec.describe "sponsors/show", type: :view do
   before(:each) do
     @sponsor = assign(:sponsor, Sponsor.create!(
       :name => "Name",
-      :logoUrl => "Logo Url",
-      :linkUrl => "Link Url",
+      :logo_url => "Logo Url",
+      :link_url => "Link Url",
       :sponsorship_level_id => 2,
       :active => false,
       :description => "MyText",
