@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_170906) do
     t.string "name"
     t.string "logoUrl"
     t.string "linkUrl"
-    t.integer "sponsorshipLevelId"
+    t.integer "sponsorship_level_id"
     t.boolean "active"
     t.text "description"
     t.text "notes"

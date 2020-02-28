@@ -37,12 +37,12 @@
     <%=f.error_span(:linkUrl) %>
   </div>
   <div class="form-group">
-    <%= f.label :sponsorshipLevelId, :class => 'control-label col-lg-2' %>
+    <%= f.label :sponsorship_level_id, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.select(:sponsorshipLevelId, SponsorshipLevel.all.collect {|l| [ l.name, l.id ] }, { class: 'form-control', include_blank: true }) %>
-      <%#= f.text_field :sponsorshipLevelId, :class => 'form-control' %>
+      <%= f.select(:sponsorship_level_id, SponsorshipLevel.all.collect {|l| [ l.name, l.id ] }, { class: 'form-control', include_blank: true }) %>
+      <%#= f.text_field :sponsorship_level_id, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:sponsorshipLevelId) %>
+    <%=f.error_span(:sponsorship_level_id) %>
   </div>
   <div class="form-group">
     <%= f.label :active, :class => 'control-label col-lg-2' %>

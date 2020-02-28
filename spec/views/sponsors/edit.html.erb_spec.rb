@@ -6,7 +6,7 @@ RSpec.describe "sponsors/edit", type: :view do
       :name => "MyString",
       :logoUrl => "MyString",
       :linkUrl => "MyString",
-      :sponsorshipLevelId => 1,
+      :sponsorship_level_id => 1,
       :active => false,
       :description => "MyText",
       :notes => "MyText"
@@ -24,7 +24,7 @@ RSpec.describe "sponsors/edit", type: :view do
 
       assert_select "input[name=?]", "sponsor[linkUrl]"
 
-      assert_select "input[name=?]", "sponsor[sponsorshipLevelId]"
+      assert_select "input[name=?]", "sponsor[sponsorship_level_id]"
 
       assert_select "input[name=?]", "sponsor[active]"
 

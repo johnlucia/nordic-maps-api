@@ -7,7 +7,7 @@ RSpec.describe "sponsors/index", type: :view do
         :name => "Name",
         :logoUrl => "Logo Url",
         :linkUrl => "Link Url",
-        :sponsorshipLevelId => 2,
+        :sponsorship_level_id => 2,
         :active => false,
         :description => "MyText",
         :notes => "MyText"
@@ -16,7 +16,7 @@ RSpec.describe "sponsors/index", type: :view do
         :name => "Name",
         :logoUrl => "Logo Url",
         :linkUrl => "Link Url",
-        :sponsorshipLevelId => 2,
+        :sponsorship_level_id => 2,
         :active => false,
         :description => "MyText",
         :notes => "MyText"
