@@ -1,0 +1,78 @@
+<%= form_with model: @sponsor, local: true, :html => { :class => "form-horizontal sponsor" } do |f| %>
+
+  <% if @sponsor.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @sponsor.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:name) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :logoUrl, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :logoUrl, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:logoUrl) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :linkUrl, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :linkUrl, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:linkUrl) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sponsorshipLevelId, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.select(:sponsorshipLevelId, SponsorshipLevel.all.collect {|l| [ l.name, l.id ] }, { class: 'form-control', include_blank: true }) %>
+      <%#= f.text_field :sponsorshipLevelId, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sponsorshipLevelId) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :active, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :active %>
+      <%#= f.text_field :active, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:active) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :description, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:description) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :notes, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :notes, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:notes) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                sponsors_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
