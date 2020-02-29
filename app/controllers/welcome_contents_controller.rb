@@ -4,7 +4,7 @@ class WelcomeContentsController < ApplicationController
   # GET /welcome_contents
   # GET /welcome_contents.json
   def index
-    @welcome_contents = WelcomeContent.all
+    @welcome_contents = WelcomeContent.all.order({active: :desc}, :position)
   end
 
   # GET /welcome_contents/1

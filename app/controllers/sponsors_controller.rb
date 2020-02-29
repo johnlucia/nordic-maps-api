@@ -4,7 +4,7 @@ class SponsorsController < ApplicationController
   # GET /sponsors
   # GET /sponsors.json
   def index
-    @sponsors = Sponsor.all
+    @sponsors = Sponsor.all.order({active: :desc}, :sponsorship_level_id)
 
     @main_sponsor = Sponsor.main_sponsor
     @secondary_sponsors = Sponsor.secondary_sponsors

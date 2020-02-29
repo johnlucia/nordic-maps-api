@@ -5,7 +5,6 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:logo_url) %></th>
       <th><%= model_class.human_attribute_name(:link_url) %></th>
@@ -20,7 +19,6 @@
   <tbody>
     <% @sponsors.each do |sponsor| %>
       <tr>
-        <td><%= link_to sponsor.id, sponsor_path(sponsor) %></td>
         <td><%= sponsor.name %></td>
         <td><%= sponsor.logo_url %></td>
         <td><%= sponsor.link_url %></td>
