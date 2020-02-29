@@ -1,0 +1,2 @@
+module WelcomeContentsHelper
+end

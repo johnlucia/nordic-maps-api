@@ -1,0 +1,2 @@
+class WelcomeContent < ApplicationRecord
+end

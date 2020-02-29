@@ -1,0 +1,68 @@
+<%= form_with model: @welcome_content, local: true, :html => { :class => "form-horizontal sponsor" } do |f| %>
+  <% if @welcome_content.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@welcome_content.errors.count, "error") %> prohibited this welcome_content from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @welcome_content.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :active, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.check_box :active %>
+    </div>
+    <%=f.error_span(:active) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :position, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.number_field(:position, in: 1..10, step: 1) %>
+    </div>
+    <%=f.error_span(:position) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :heading, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :heading, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:heading) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :body, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :body, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:body) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :link_text, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :link_text, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:link_text) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :link_url, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :link_url, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:link_url) %>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit "Save", :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                welcome_contents_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
