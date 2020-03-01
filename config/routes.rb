@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :welcome, only: [:index]
   resources :welcome_contents
   root 'home#index'
   resources :sponsorship_levels
