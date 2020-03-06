@@ -4,8 +4,7 @@ module Api
       skip_before_action :require_login
 
       def index
-        @main_sponsor = Sponsor.main_sponsor
-        @secondary_sponsors = Sponsor.secondary_sponsors
+        @sponsors = Sponsor.where(active: true).order(:position)
         @welcome_content = WelcomeContent.where(active: true).order(:position)
         @trails = Trail.where(active: true)
         @junctions = Junction.where(active: true)

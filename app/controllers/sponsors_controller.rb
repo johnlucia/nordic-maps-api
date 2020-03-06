@@ -4,7 +4,7 @@ class SponsorsController < ApplicationController
   # GET /sponsors
   # GET /sponsors.json
   def index
-    @sponsors = Sponsor.all.order({active: :desc}, :sponsorship_level_id)
+    @sponsors = Sponsor.all.order({active: :desc}, :position)
 
     @main_sponsor = Sponsor.main_sponsor
     @secondary_sponsors = Sponsor.secondary_sponsors
@@ -72,6 +72,6 @@ class SponsorsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def sponsor_params
-      params.require(:sponsor).permit(:name, :logo_url, :link_url, :sponsorship_level_id, :active, :description, :notes)
+      params.require(:sponsor).permit(:name, :position, :logo_url, :link_url, :sponsorship_level_id, :active, :description, :notes)
     end
 end
