@@ -3,20 +3,19 @@ class Trail < ApplicationRecord
 
   def validate_coordinates
     begin
-      data = JSON.parse(coordinates)
-      valid = data.kind_of?(Array) && data.length > 2
+      data = JSON.parse(coordinates_json)
+      valid = data.kind_of?(Array) && (data.length > 2)
     rescue
       valid = false
     end
-
-    valid ? true : errors.add(:coordinates, "Must be a valid JSON array")
+    valid ? true : errors.add(:coordinates_json, "Must be a valid JSON array")
   end
 
-  def parsed_coordinates
+  def coordinates
     begin
-      JSON.parse(coordinates)
+      JSON.parse(coordinates_json)
     rescue
-      return nil
+      []
     end
   end
 end

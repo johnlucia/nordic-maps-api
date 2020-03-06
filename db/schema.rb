@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_06_011306) do
+ActiveRecord::Schema.define(version: 2020_03_06_163951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_03_06_011306) do
     t.string "length"
     t.integer "level"
     t.text "description"
-    t.json "coordinates"
+    t.json "coordinates_json"
     t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

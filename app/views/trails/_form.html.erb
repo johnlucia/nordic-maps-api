@@ -39,7 +39,6 @@
   <div class="form-group">
     <%= f.label :level, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%# = f.text_field :level, :class => 'form-control' %>
       <%= f.select(:level, [['1',1],['2',2],['3',3]], { class: 'form-control', include_blank: true }) %>
     </div>
     <%=f.error_span(:level) %>
@@ -52,11 +51,11 @@
     <%=f.error_span(:description) %>
   </div>
   <div class="form-group">
-    <%= f.label :coordinates, :class => 'control-label col-lg-2' %>
+    <%= f.label :coordinates_json, :class => 'control-label col-lg-2' %>
     <div class="col-lg-10">
-      <%= f.text_field :coordinates, :class => 'form-control' %>
+      <%= f.text_field :coordinates_json, :class => 'form-control' %>
     </div>
-    <%=f.error_span(:coordinates) %>
+    <%=f.error_span(:coordinates_json) %>
   </div>
   <div class="form-group">
     <%= f.label :active, :class => 'control-label col-lg-2' %>
