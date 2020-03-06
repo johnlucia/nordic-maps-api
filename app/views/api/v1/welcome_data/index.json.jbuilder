@@ -5,3 +5,5 @@ json.secondary_sponsors @secondary_sponsors, :id, :name, :logo_url, :link_url, :
 json.welcome_content @welcome_content, :id, :position, :heading, :body, :link_text, :link_url
 
 json.trails @trails, :id, :name, :color, :length, :level, :description, :coordinates
+
+json.junctions @junctions, :id, :name, :coordinate

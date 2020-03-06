@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :junctions
   resources :trails
   resources :welcome, only: [:index]
   resources :welcome_contents
