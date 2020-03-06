@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_29_184630) do
+ActiveRecord::Schema.define(version: 2020_03_06_011306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,18 @@ ActiveRecord::Schema.define(version: 2020_02_29_184630) do
 
   create_table "sponsorship_levels", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trails", force: :cascade do |t|
+    t.string "name"
+    t.string "color"
+    t.string "length"
+    t.integer "level"
+    t.text "description"
+    t.json "coordinates"
+    t.boolean "active"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

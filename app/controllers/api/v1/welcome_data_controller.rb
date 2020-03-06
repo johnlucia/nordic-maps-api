@@ -7,6 +7,7 @@ module Api
         @main_sponsor = Sponsor.main_sponsor
         @secondary_sponsors = Sponsor.secondary_sponsors
         @welcome_content = WelcomeContent.where(active: true).order(:position)
+        @trails = Trail.where(active: true)
       end
     end
   end
