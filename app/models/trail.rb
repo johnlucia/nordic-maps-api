@@ -1,5 +1,6 @@
 class Trail < ApplicationRecord
-  validate :validate_coordinates
+  validate  :validate_coordinates
+  validates :uid, uniqueness: true
 
   def validate_coordinates
     begin

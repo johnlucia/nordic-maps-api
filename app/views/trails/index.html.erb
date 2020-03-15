@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:uid) %></th>
       <th><%= model_class.human_attribute_name(:color) %></th>
       <th><%= model_class.human_attribute_name(:length) %></th>
       <th><%= model_class.human_attribute_name(:level) %></th>
@@ -19,6 +20,7 @@
     <% @trails.each do |trail| %>
       <tr>
         <td><%= trail.name %></td>
+        <td><%= trail.uid %></td>
         <td><%= trail.color %></td>
         <td><%= trail.length %></td>
         <td><%= trail.level %></td>

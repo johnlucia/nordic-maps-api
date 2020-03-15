@@ -2,6 +2,6 @@ json.sponsors @sponsors, :id, :name, :logo_url, :link_url, :description
 
 json.welcome_content @welcome_content, :id, :position, :heading, :body, :link_text, :link_url
 
-json.trails @trails, :id, :name, :color, :length, :level, :description, :coordinates
+json.trails @trails, :id, :uid, :name, :color, :length, :level, :description, :coordinates
 
 json.junctions @junctions, :id, :name, :coordinate
