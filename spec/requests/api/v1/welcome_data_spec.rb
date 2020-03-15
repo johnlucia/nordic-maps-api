@@ -6,7 +6,7 @@ RSpec.describe "WelcomeData", type: :request do
   describe "GET /api/v1/welcome_data" do
     context "no data to show" do
       let(:empty_data_set) {
-        {'sponsors' => [], 'welcome_content' => [], 'trails' => [], 'junctions' => []}
+        {'sponsors' => [], 'welcome_content' => [], 'trails' => [], 'junctions' => [], 'parking' => [], 'shelters' => []}
       }
 
       it "returns empty arrays" do
@@ -66,6 +66,7 @@ RSpec.describe "WelcomeData", type: :request do
 
         Trail.create!(
           name: "Trail 1",
+          uid: SecureRandom.hex,
           color: "Color",
           length: "Length",
           level: 2,
@@ -75,6 +76,7 @@ RSpec.describe "WelcomeData", type: :request do
         )
         Trail.create!(
           name: "Trail 2",
+          uid: SecureRandom.hex,
           color: "Color",
           length: "Length",
           level: 2,
@@ -84,6 +86,7 @@ RSpec.describe "WelcomeData", type: :request do
         )
         Trail.create!(
           name: "Inactive Trail",
+          uid: SecureRandom.hex,
           color: "Color",
           length: "Length",
           level: 2,
