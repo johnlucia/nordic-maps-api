@@ -119,6 +119,27 @@ RSpec.describe "WelcomeData", type: :request do
           position: 1,
           active: false
         )
+        Shelter.create!(
+          name: "some shelter",
+          uid: "some-shelter",
+          latitude: "44.5",
+          longitude: "-121.5",
+          active: true
+        )
+        Shelter.create!(
+          name: "some other shelter",
+          uid: "some-other-shelter",
+          latitude: "44.6",
+          longitude: "-121.6",
+          active: true
+        )
+        Shelter.create!(
+          name: "non active shelter",
+          uid: "non-active-shelter",
+          latitude: "44.7",
+          longitude: "-121.7",
+          active: false
+        )
       end
 
       let(:payload) {
@@ -127,44 +148,67 @@ RSpec.describe "WelcomeData", type: :request do
       }
 
       let(:welcome_content) { payload['welcome_content'] }
-      let(:trails) { payload['trails'] }
-      let(:sponsors) { payload['sponsors'] }
-      let(:junctions) { payload['junctions'] }
+      let(:junctions)       { payload['junctions'] }
+      let(:sponsors)        { payload['sponsors'] }
+      let(:shelters)        { payload['shelters'] }
+      let(:trails)          { payload['trails'] }
 
-      it "delivers welcome content in the correct order" do
-        headings = welcome_content.map { |item| item['heading'] }
-        expect(headings).to eq ["First Section", "Second Section"]
+      context "Welcome Content:" do
+        it "delivers welcome content in the correct order" do
+          headings = welcome_content.map { |item| item['heading'] }
+          expect(headings).to eq ["First Section", "Second Section"]
+        end
       end
 
-      it "delivers sponsors in the correct order" do
-        names = sponsors.map { |item| item['name'] }
-        expect(names).to eq ["First Sponsor", "Second Sponsor"]
+      context "Sponsors:" do
+        it "delivers sponsors in the correct order" do
+          names = sponsors.map { |item| item['name'] }
+          expect(names).to eq ["First Sponsor", "Second Sponsor"]
+        end
       end
 
-      it "delivers the correct junctions" do
-        names = junctions.map { |item| item['name'] }
-        expect(names.length).to eq(2)
-        expect(names).to include("Active Junction 1", "Active Junction 2")
+      context "Junctions:" do
+        it "delivers the correct junctions" do
+          names = junctions.map { |item| item['name'] }
+          expect(names.length).to eq(2)
+          expect(names).to include("Active Junction 1", "Active Junction 2")
+        end
+
+        it "attaches a coordinate attribute to junctions" do
+          coordinate = junctions[0]['coordinate']
+          expect(coordinate['latitude']).to_not be nil
+          expect(coordinate['longitude']).to_not be nil
+        end
       end
 
-      it "attaches a coordinate attribute to junctions" do
-        coordinate = junctions[0]['coordinate']
-        expect(coordinate['latitude']).to_not be nil
-        expect(coordinate['longitude']).to_not be nil
+      context "Shelters:" do
+        it "delivers the correct shelters" do
+          names = shelters.map { |item| item['name'] }
+          expect(names.length).to eq(2)
+          expect(names).to include("some shelter", "some other shelter")
+        end
+
+        it "attaches a coordinate attribute to junctions" do
+          coordinate = junctions[0]['coordinate']
+          expect(coordinate['latitude']).to_not be nil
+          expect(coordinate['longitude']).to_not be nil
+        end
       end
 
-      it "delivers the correct trails" do
-        names = trails.map { |item| item['name'] }
-        expect(names.length).to eq(2)
-        expect(names).to include("Trail 1", "Trail 2")
-      end
+      context "Trails:" do
+        it "delivers the correct trails" do
+          names = trails.map { |item| item['name'] }
+          expect(names.length).to eq(2)
+          expect(names).to include("Trail 1", "Trail 2")
+        end
 
-      it "delivers a coordinate array with each trail" do
-        coordinates = trails[0]['coordinates']
-        first_latitude = coordinates[0]['latitude']
-        first_longitude = coordinates[0]['longitude']
-        expect(first_latitude).to eq(43.98)
-        expect(first_longitude).to eq(-121.52)
+        it "delivers a coordinate array with each trail" do
+          coordinates = trails[0]['coordinates']
+          first_latitude = coordinates[0]['latitude']
+          first_longitude = coordinates[0]['longitude']
+          expect(first_latitude).to eq(43.98)
+          expect(first_longitude).to eq(-121.52)
+        end
       end
     end
   end
