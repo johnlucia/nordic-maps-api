@@ -25,7 +25,7 @@
         <td><%= sponsor.logo_url %></td>
         <td><%= sponsor.link_url %></td>
         <td><%= sponsor.sponsorship_level.name if sponsor.sponsorship_level %></td>
-        <td><%= sponsor.active %></td>
+        <td class="<%= sponsor.active ? 'text-success' : 'text-danger' %>"><%= sponsor.active %></td>
         <td><%= sponsor.description %></td>
         <td><%= sponsor.notes %></td>
         <td>

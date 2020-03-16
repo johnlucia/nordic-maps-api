@@ -12,7 +12,6 @@
       <th><%= model_class.human_attribute_name(:active) %></th>
       <th><%= model_class.human_attribute_name(:latitude) %></th>
       <th><%= model_class.human_attribute_name(:longitude) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -23,10 +22,9 @@
         <td><%= shelter.name %></td>
         <td><%= shelter.uid %></td>
         <td><%= shelter.description %></td>
-        <td><%= shelter.active %></td>
+        <td class="<%= shelter.active ? 'text-success' : 'text-danger' %>"><%= shelter.active %></td>
         <td><%= shelter.latitude %></td>
         <td><%= shelter.longitude %></td>
-        <td><%=l shelter.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_shelter_path(shelter), :class => 'btn btn-default btn-xs' %>

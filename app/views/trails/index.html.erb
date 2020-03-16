@@ -11,7 +11,7 @@
       <th><%= model_class.human_attribute_name(:length) %></th>
       <th><%= model_class.human_attribute_name(:level) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:coordinates_json) %></th>
+      <th>Coordinates</th>
       <th><%= model_class.human_attribute_name(:active) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -25,8 +25,8 @@
         <td><%= trail.length %></td>
         <td><%= trail.level %></td>
         <td><%= trail.description %></td>
-        <td><%= trail.coordinates %></td>
-        <td><%= trail.active %></td>
+        <td><%= trail.coordinates.length %> Waypoints</td>
+        <td class="<%= trail.active ? 'text-success' : 'text-danger' %>"><%= trail.active %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_trail_path(trail), :class => 'btn btn-default btn-xs' %>

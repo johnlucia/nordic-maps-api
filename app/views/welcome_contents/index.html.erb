@@ -23,7 +23,7 @@
         <td><%= welcome_content.link_text %></td>
         <td><%= welcome_content.link_url %></td>
         <td><%= welcome_content.position %></td>
-        <td><%= welcome_content.active %></td>
+        <td class="<%= welcome_content.active ? 'text-success' : 'text-danger' %>"><%= welcome_content.active %></td>
         <td><%=l welcome_content.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
