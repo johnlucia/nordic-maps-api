@@ -17,129 +17,34 @@ RSpec.describe "WelcomeData", type: :request do
 
     context "JSON Payloads" do
       before(:each) do
-        Junction.create!(
-          name: "Active Junction 1",
-          latitude: "44.5",
-          longitude: "-121.5",
-          active: true
-        )
-        Junction.create!(
-          name: "Active Junction 2",
-          latitude: "44.6",
-          longitude: "-121.6",
-          active: true
-        )
-        Junction.create!(
-          name: "Inactive Junction",
-          latitude: "44.7",
-          longitude: "-121.7",
-          active: false
-        )
+        Junction.create!(name: "Active Junction 1", latitude: "44.5", longitude: "-121.5", active: true)
+        Junction.create!(name: "Active Junction 2", latitude: "44.6", longitude: "-121.6", active: true)
+        Junction.create!(name: "Inactive Junction", latitude: "44.7", longitude: "-121.7", active: false)
       
-        Sponsor.create!(
-          name: "Second Sponsor",
-          logo_url: "Logo Url",
-          link_url: "Link Url",
-          position: 3,
-          active: true,
-          description: "MyText",
-          notes: "MyText"
-        )
-        Sponsor.create!(
-          name: "First Sponsor",
-          logo_url: "Logo Url",
-          link_url: "Link Url",
-          position: 2,
-          active: true,
-          description: "MyText",
-          notes: "MyText"
-        )
-        Sponsor.create!(
-          name: "Inactive Sponsor",
-          logo_url: "Logo Url",
-          link_url: "Link Url",
-          position: 1,
-          active: false,
-          description: "MyText",
-          notes: "MyText"
-        )
+        Sponsor.create!(name: "Second Sponsor", logo_url: "Logo Url", link_url: "Link Url",
+                        position: 3, active: true, description: "MyText", notes: "MyText" )
+        Sponsor.create!(name: "First Sponsor", logo_url: "Logo Url", link_url: "Link Url",
+                        position: 2, active: true, description: "MyText", notes: "MyText" )
+        Sponsor.create!(name: "Inactive Sponsor", logo_url: "Logo Url", link_url: "Link Url",
+                        position: 1, active: false, description: "MyText", notes: "MyText")
 
-        Trail.create!(
-          name: "Trail 1",
-          uid: SecureRandom.hex,
-          color: "Color",
-          length: "Length",
-          level: 2,
-          active: true,
-          description: "MyText",
-          coordinates_json: valid_trail_json
-        )
-        Trail.create!(
-          name: "Trail 2",
-          uid: SecureRandom.hex,
-          color: "Color",
-          length: "Length",
-          level: 2,
-          active: true,
-          description: "MyText",
-          coordinates_json: valid_trail_json
-        )
-        Trail.create!(
-          name: "Inactive Trail",
-          uid: SecureRandom.hex,
-          color: "Color",
-          length: "Length",
-          level: 2,
-          active: false,
-          description: "MyText",
-          coordinates_json: valid_trail_json
-        )
+        Trail.create!(name: "Trail 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
+                      active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Trail 2", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
+                      active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Inactive Trail", uid: SecureRandom.hex, color: "Color", length: "Length",
+                      level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
 
-        WelcomeContent.create!(
-          heading: "Second Section",
-          body: "MyText",
-          link_text: "Link Text",
-          link_url: "Link Url",
-          position: 2,
-          active: true
-        )
-        WelcomeContent.create!(
-          heading: "First Section",
-          body: "MyText",
-          link_text: "Link Text",
-          link_url: "Link Url",
-          position: 1,
-          active: true
-        )
-        WelcomeContent.create!(
-          heading: "Inactive Section",
-          body: "MyText",
-          link_text: "Link Text",
-          link_url: "Link Url",
-          position: 1,
-          active: false
-        )
-        Shelter.create!(
-          name: "some shelter",
-          uid: "some-shelter",
-          latitude: "44.5",
-          longitude: "-121.5",
-          active: true
-        )
-        Shelter.create!(
-          name: "some other shelter",
-          uid: "some-other-shelter",
-          latitude: "44.6",
-          longitude: "-121.6",
-          active: true
-        )
-        Shelter.create!(
-          name: "non active shelter",
-          uid: "non-active-shelter",
-          latitude: "44.7",
-          longitude: "-121.7",
-          active: false
-        )
+        WelcomeContent.create!( heading: "Second Section", body: "MyText", link_text: "Link Text",
+                                link_url: "Link Url", position: 2, active: true )
+        WelcomeContent.create!( heading: "First Section", body: "MyText", link_text: "Link Text",
+                                link_url: "Link Url", position: 1, active: true )
+        WelcomeContent.create!( heading: "Inactive Section", body: "MyText", link_text: "Link Text",
+                                link_url: "Link Url", position: 1, active: false )
+
+        Shelter.create!(name: "shelter 1", uid: "shelter-1", latitude: "44.5", longitude: "-121.5", active: true)
+        Shelter.create!(name: "shelter 2", uid: "shelter-2", latitude: "44.6", longitude: "-121.6", active: true)
+        Shelter.create!(name: "shelter 3", uid: "shelter-3", latitude: "44.7", longitude: "-121.7", active: false )
       end
 
       let(:payload) {
