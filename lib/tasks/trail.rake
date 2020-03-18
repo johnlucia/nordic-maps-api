@@ -15,4 +15,17 @@ namespace :trail do
     puts trail.inspect
     
   end
+
+  task :minify, [:id] => :environment do |task, args|
+    trail = Trail.find args.id
+    big_array = JSON.parse(trail.coordinates_json)
+    # always preserve first item in array
+    small_array = [ big_array[0] ]
+    big_array.each_with_index do |value, index|
+      small_array << value if index.even?
+    end
+
+    trail.update_attributes(coordinates_json: small_array.to_json)
+    puts "Reduced #{trail.name} from #{big_array.length} to #{small_array.length}"
+  end
 end
