@@ -12,21 +12,21 @@
       <th><%= model_class.human_attribute_name(:level) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
       <th>Coordinates</th>
-      <th><%= model_class.human_attribute_name(:active) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
   <tbody>
     <% @trails.each do |trail| %>
-      <tr>
-        <td><%= trail.name %></td>
+      <tr class="<%= 'text-muted' if !trail.active %>">
+        <td class="<%= 'text-success font-weight-bold' if trail.active %>">
+          <%= trail.name %>
+        </td>
         <td><%= trail.uid %></td>
         <td><%= trail.color %></td>
         <td><%= trail.length %></td>
         <td><%= trail.level %></td>
         <td><%= trail.description %></td>
         <td><%= trail.coordinates.length %> Waypoints</td>
-        <td class="<%= trail.active ? 'text-success' : 'text-danger' %>"><%= trail.active %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_trail_path(trail), :class => 'btn btn-default btn-xs' %>
