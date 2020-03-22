@@ -4,6 +4,8 @@ json.welcome_content @welcome_content, :id, :position, :heading, :body, :link_te
 
 json.trails @trails, :id, :uid, :name, :color, :length, :level, :description, :coordinates
 
+json.ungroomed @ungroomed, :id, :uid, :name, :color, :length, :level, :description, :coordinates
+
 json.junctions @junctions, :id, :name, :coordinate
 
 json.shelters @shelters, :id, :uid, :name, :description, :coordinate

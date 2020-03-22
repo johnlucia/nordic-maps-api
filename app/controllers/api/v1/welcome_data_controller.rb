@@ -6,7 +6,8 @@ module Api
       def index
         @sponsors = Sponsor.where(active: true).order(:position)
         @welcome_content = WelcomeContent.where(active: true).order(:position)
-        @trails = Trail.where(active: true)
+        @trails = Trail.where(active: true, groomed: true)
+        @ungroomed = Trail.where(active: true, groomed: false)
         @junctions = Junction.where(active: true)
         @shelters = Shelter.where(active: true)
         @parking = []
