@@ -65,6 +65,10 @@ GEM
     browser (4.0.0)
     builder (3.2.4)
     byebug (11.1.1)
+    codecov (0.1.16)
+      json
+      simplecov
+      url
     commonjs (0.2.7)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
@@ -85,6 +89,7 @@ GEM
     jaro_winkler (1.5.4)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
+    json (2.3.0)
     less (2.6.0)
       commonjs (~> 0.2.7)
     less-rails (4.0.0)
@@ -237,6 +242,7 @@ GEM
     tzinfo (1.2.6)
       thread_safe (~> 0.1)
     unicode-display_width (1.6.1)
+    url (0.3.2)
     web-console (4.0.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -259,6 +265,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   browser
   byebug
+  codecov
   dotenv-rails
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
@@ -267,7 +274,6 @@ DEPENDENCIES
   rails (~> 6.0.2, >= 6.0.2.1)
   rspec-rails
   sass-rails (>= 6)
-  simplecov
   solargraph
   spring
   spring-watcher-listen (~> 2.0.0)
