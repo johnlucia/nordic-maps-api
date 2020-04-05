@@ -1,6 +1,32 @@
 <h1>Bend Nordic Trail Maps</h1>
-<hr />
-<br><br><br>
+
+<div class="row">
+  <% if @is_ios || @is_something_else %>
+    <div class="col-sm-9 col-md-5">
+      <div class="thumbnail">
+        <img src="https://res.cloudinary.com/rhythm/image/upload/v1586108989/iPhone_11_Pro_and_iPhone_11_Pro_Max.jpg" alt="App on iPhone" />
+        <div class="caption">
+          <h3>For iPhone and iPad</h3>
+          <p>Easy to use trail maps for the Meissner Nordic ski trails near Bend, Oregon. Go the the App Store to install <strong><em>Bend Nordic Trail Maps</em></strong> on your phone.</p>
+          <p><a href="https://apps.apple.com/us/app/bend-nordic-trail-map/id1500194145?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-03-16&kind=iossoftware&bubble=apple_music) no-repeat;width:135px;height:40px;"></a></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @is_android || @is_something_else %>
+    <div class="col-sm-9 col-md-5">
+      <div class="thumbnail">
+        <img src="https://res.cloudinary.com/rhythm/image/upload/v1586108989/iPhone_11_Pro_and_iPhone_11_Pro_Max.jpg" alt="App on Android phone" />
+        <div class="caption">
+          <h3>For Android</h3>
+          <p>Easy to use trail maps for the Meissner Nordic ski trails near Bend, Oregon. Go to the Play Store and install <strong>Bend Nordic Trail Maps</strong> on your phone</p>
+          <p><a href='https://play.google.com/store/apps/details?id=com.mindbarrel.bendnordictrailmap&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png'/></a></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <h2 id='sponsorship'>Become a Sponsor</h2>
 <p>Please contact John@FollowRhythm.com if you are interested in becoming a sponsor, or helping out with future improvements to the app.</p>

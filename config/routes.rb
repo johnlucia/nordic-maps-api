@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  resources :home, only: [:index]
   resources :shelters
   resources :junctions
   resources :trails
   resources :welcome, only: [:index]
   resources :welcome_contents
-  root 'home#index'
+  root 'welcome#index'
   resources :sponsorship_levels
   resources :sponsors
 
