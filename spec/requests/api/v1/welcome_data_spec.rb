@@ -6,7 +6,13 @@ RSpec.describe "WelcomeData", type: :request do
   describe "GET /api/v1/welcome_data" do
     context "no data to show" do
       let(:empty_data_set) {
-        {'sponsors' => [], 'welcome_content' => [], 'trails' => [], 'junctions' => [], 'parking' => [], 'shelters' => []}
+        { 'sponsors' => [],
+          'welcome_content' => [],
+          'trails' => [],
+          "ungroomed" => [],
+          'junctions' => [],
+          'parking' => [],
+          'shelters' => [] }
       }
 
       it "returns empty arrays" do
@@ -29,10 +35,17 @@ RSpec.describe "WelcomeData", type: :request do
                         position: 1, active: false, description: "MyText", notes: "MyText")
 
         Trail.create!(name: "Trail 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
-                      active: true, description: "MyText", coordinates_json: valid_trail_json)
+                      groomed: true, active: true, description: "MyText", coordinates_json: valid_trail_json)
         Trail.create!(name: "Trail 2", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
-                      active: true, description: "MyText", coordinates_json: valid_trail_json)
-        Trail.create!(name: "Inactive Trail", uid: SecureRandom.hex, color: "Color", length: "Length",
+                      groomed: true, active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Inactive Trail", uid: SecureRandom.hex, color: "Color", length: "Length", groomed: true,
+                      level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
+
+        Trail.create!(name: "Ungroomed 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
+          groomed: false, active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Ungroomed 2", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
+                      groomed: false, active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Inactive Trail", uid: SecureRandom.hex, color: "Color", length: "Length", groomed: false,
                       level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
 
         WelcomeContent.create!( heading: "Second Section", body: "MyText", link_text: "Link Text",
@@ -57,6 +70,7 @@ RSpec.describe "WelcomeData", type: :request do
       let(:sponsors)        { payload['sponsors'] }
       let(:shelters)        { payload['shelters'] }
       let(:trails)          { payload['trails'] }
+      let(:ungroomed)       { payload['ungroomed'] }
 
       context "Welcome Content:" do
         it "delivers welcome content in the correct order" do
@@ -90,7 +104,7 @@ RSpec.describe "WelcomeData", type: :request do
         it "delivers the correct shelters" do
           names = shelters.map { |item| item['name'] }
           expect(names.length).to eq(2)
-          expect(names).to include("some shelter", "some other shelter")
+          expect(names).to include("shelter 1", "shelter 2")
         end
 
         it "attaches a coordinate attribute to junctions" do
@@ -109,6 +123,23 @@ RSpec.describe "WelcomeData", type: :request do
 
         it "delivers a coordinate array with each trail" do
           coordinates = trails[0]['coordinates']
+          first_latitude = coordinates[0]['latitude']
+          first_longitude = coordinates[0]['longitude']
+          expect(first_latitude).to eq(43.98)
+          expect(first_longitude).to eq(-121.52)
+        end
+      end
+
+
+      context "Ungroomed Trails:" do
+        it "delivers the correct ungroomed trails" do
+          names = ungroomed.map { |item| item['name'] }
+          expect(names.length).to eq(2)
+          expect(names).to include("Ungroomed 1", "Ungroomed 2")
+        end
+
+        it "delivers a coordinate array with each trail" do
+          coordinates = ungroomed[0]['coordinates']
           first_latitude = coordinates[0]['latitude']
           first_longitude = coordinates[0]['longitude']
           expect(first_latitude).to eq(43.98)

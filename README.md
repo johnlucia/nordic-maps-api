@@ -1,24 +1,5 @@
-# README
+[![Build Status](https://travis-ci.org/johnlucia/nordic-maps-api.svg?branch=master)](https://travis-ci.org/johnlucia/nordic-maps-api)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Nordic Maps API
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Rails App Supporting Bend Nordic Trail Maps [Bend Nordic Trail Maps](https://nordic-maps-api.herokuapp.com)
