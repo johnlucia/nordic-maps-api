@@ -1,0 +1,10 @@
+addons:
+  postgresql: 12.1
+before_script:
+  - psql -c 'create database nordicMapsApi_test;' -U postgres
+language: ruby
+rvm:
+  - 2.7.0
+script:
+  - bundle exec rails db:migrate RAILS_ENV=test
+  - bundle exec rspec
