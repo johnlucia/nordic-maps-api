@@ -14,3 +14,7 @@
 img {
   max-width: 100%;
 }
+
+.android-hack-wrap img{
+  max-height:63px;
+}
