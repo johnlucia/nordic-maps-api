@@ -2,6 +2,9 @@ class Trail < ApplicationRecord
   validate  :validate_coordinates
   validates :uid, uniqueness: true
 
+  scope :active_groomed, -> { where(active: true, groomed: true) }
+  scope :active_ungroomed, -> { where(active: true, groomed: false) }
+
   def validate_coordinates
     begin
       data = JSON.parse(coordinates_json)

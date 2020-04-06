@@ -4,10 +4,10 @@ module Api
       skip_before_action :require_login
 
       def index
-        @sponsors = Sponsor.where(active: true).order(:position)
-        @welcome_content = WelcomeContent.where(active: true).order(:position)
-        @trails = Trail.where(active: true, groomed: true)
-        @ungroomed = Trail.where(active: true, groomed: false)
+        @sponsors = Sponsor.active_sponsors
+        @welcome_content = WelcomeContent.active_content
+        @trails = Trail.active_groomed
+        @ungroomed = Trail.active_ungroomed
         @junctions = Junction.where(active: true)
         @shelters = Shelter.where(active: true)
         @parking = []

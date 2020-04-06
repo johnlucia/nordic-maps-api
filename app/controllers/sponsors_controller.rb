@@ -5,9 +5,6 @@ class SponsorsController < ApplicationController
   # GET /sponsors.json
   def index
     @sponsors = Sponsor.all.order({active: :desc}, :position)
-
-    @main_sponsor = Sponsor.main_sponsor
-    @secondary_sponsors = Sponsor.secondary_sponsors
   end
 
   # GET /sponsors/1
