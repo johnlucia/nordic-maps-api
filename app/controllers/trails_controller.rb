@@ -70,6 +70,6 @@ class TrailsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def trail_params
       params.require(:trail).permit(:name, :uid, :color, :length, :level, :groomed,
-                                    :description, :coordinates_json, :active)
+                                    :description, :coordinates_json, :active, :trail_type)
     end
 end

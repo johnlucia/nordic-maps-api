@@ -8,6 +8,7 @@ module Api
         @welcome_content = WelcomeContent.active_content
         @trails = Trail.active_groomed
         @ungroomed = Trail.active_ungroomed
+        @snowshoe = Trail.active_snowshoe
         @junctions = Junction.where(active: true)
         @shelters = Shelter.where(active: true)
         @parking = []

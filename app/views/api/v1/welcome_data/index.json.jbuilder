@@ -6,6 +6,8 @@ json.trails @trails, :id, :uid, :name, :color, :length, :level, :description, :c
 
 json.ungroomed @ungroomed, :id, :uid, :name, :color, :length, :level, :description, :coordinates
 
+json.snowshoe @snowshoe, :id, :uid, :name, :color, :length, :level, :description, :coordinates
+
 json.junctions @junctions, :id, :name, :coordinate
 
 json.shelters @shelters, :id, :uid, :name, :description, :coordinate
