@@ -9,7 +9,8 @@ RSpec.describe "WelcomeData", type: :request do
         { 'sponsors' => [],
           'welcome_content' => [],
           'trails' => [],
-          "ungroomed" => [],
+          'ungroomed' => [],
+          'snowshoe' => [],
           'junctions' => [],
           'parking' => [],
           'shelters' => [] }
@@ -35,18 +36,25 @@ RSpec.describe "WelcomeData", type: :request do
                         position: 1, active: false, description: "MyText", notes: "MyText")
 
         Trail.create!(name: "Trail 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
-                      groomed: true, active: true, description: "MyText", coordinates_json: valid_trail_json)
+                      trail_type: "ski", groomed: true, active: true, description: "MyText", coordinates_json: valid_trail_json)
         Trail.create!(name: "Trail 2", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
-                      groomed: true, active: true, description: "MyText", coordinates_json: valid_trail_json)
+                      trail_type: "ski", groomed: true, active: true, description: "MyText", coordinates_json: valid_trail_json)
         Trail.create!(name: "Inactive Trail", uid: SecureRandom.hex, color: "Color", length: "Length", groomed: true,
-                      level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
+                      trail_type: "ski", level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
 
         Trail.create!(name: "Ungroomed 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
-          groomed: false, active: true, description: "MyText", coordinates_json: valid_trail_json)
+                      trail_type: "ski", groomed: false, active: true, description: "MyText", coordinates_json: valid_trail_json)
         Trail.create!(name: "Ungroomed 2", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
-                      groomed: false, active: true, description: "MyText", coordinates_json: valid_trail_json)
+                      trail_type: "ski", groomed: false, active: true, description: "MyText", coordinates_json: valid_trail_json)
         Trail.create!(name: "Inactive Trail", uid: SecureRandom.hex, color: "Color", length: "Length", groomed: false,
-                      level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
+                      trail_type: "ski", level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
+
+        Trail.create!(name: "Snowshoe 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
+                      trail_type: "snowshoe", active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Snowshoe 2", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
+                      trail_type: "snowshoe", active: true, description: "MyText", coordinates_json: valid_trail_json)
+        Trail.create!(name: "Inactive Snowshoe Trail", uid: SecureRandom.hex, color: "Color", length: "Length",
+                      trail_type: "snowshoe", level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
 
         WelcomeContent.create!( heading: "Second Section", body: "MyText", link_text: "Link Text",
                                 link_url: "Link Url", position: 2, active: true )
@@ -71,6 +79,7 @@ RSpec.describe "WelcomeData", type: :request do
       let(:shelters)        { payload['shelters'] }
       let(:trails)          { payload['trails'] }
       let(:ungroomed)       { payload['ungroomed'] }
+      let(:snowshoe)        { payload['snowshoe'] }
 
       context "Welcome Content:" do
         it "delivers welcome content in the correct order" do
@@ -140,6 +149,22 @@ RSpec.describe "WelcomeData", type: :request do
 
         it "delivers a coordinate array with each trail" do
           coordinates = ungroomed[0]['coordinates']
+          first_latitude = coordinates[0]['latitude']
+          first_longitude = coordinates[0]['longitude']
+          expect(first_latitude).to eq(43.98)
+          expect(first_longitude).to eq(-121.52)
+        end
+      end
+
+      context "Snowshoe Trails:" do
+        it "delivers the correct snowshoe trails" do
+          names = snowshoe.map { |item| item['name'] }
+          expect(names.length).to eq(2)
+          expect(names).to include("Snowshoe 1", "Snowshoe 2")
+        end
+
+        it "delivers a coordinate array with each trail" do
+          coordinates = snowshoe[0]['coordinates']
           first_latitude = coordinates[0]['latitude']
           first_longitude = coordinates[0]['longitude']
           expect(first_latitude).to eq(43.98)
