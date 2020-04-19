@@ -17,7 +17,7 @@ namespace :trail do
   end
 
   task :from_official_kml, [:id] => :environment do |task, args|
-    file=File.read("#{Rails.root}/geojson/meissner-trails.json")
+    file=File.read("#{Rails.root}/geojson/all-trails.json")
     data=JSON.parse(file)
     trail_data = data['features'].select { |feature|  feature['id'] == args.id }
     coordinates = trail_data.first['geometry']['coordinates']
