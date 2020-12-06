@@ -4,6 +4,8 @@ module Api
       skip_before_action :require_login
 
       def index
+        UsageTracker.count_homescreen_load
+
         @sponsors = Sponsor.active_sponsors
         @welcome_content = WelcomeContent.active_content
         @trails = Trail.active_groomed
