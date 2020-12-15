@@ -24,10 +24,10 @@ class UsageTracker
   end
 
   def count_homescreen_load
-    HOMESCREEN_VIEWS.incr(@day)
+    HOMESCREEN_VIEWS.incr(@day) if ENV['REDISCLOUD_URL']
   end
 
   def todays_homescreen_views
-    HOMESCREEN_VIEWS.get(@day)
+    HOMESCREEN_VIEWS.get(@day) if ENV['REDISCLOUD_URL']
   end
 end
