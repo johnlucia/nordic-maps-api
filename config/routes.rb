@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :sponsorship_levels
   resources :sponsors
+  resources :analytics, only: [:index]
 
   namespace :api do
     namespace :v1 do

@@ -5,7 +5,7 @@ class UsageTracker
     new.count_homescreen_load
   end
 
-  def self.homescreen_load_count(total_days=10)
+  def self.homescreen_load_count(total_days=21)
     screen_view_data = {}
 
     Date.today.downto(self.today - total_days.days) do |date|

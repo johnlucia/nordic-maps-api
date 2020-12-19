@@ -1,0 +1,20 @@
+<h2>Homescreen Page Loads</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Day</th>
+      <th>App Loads</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @load_count.each do |day,count| %>
+      <tr>
+        <td><%= day %></td>
+        <td><%= day.to_date.strftime("%A") %></td>
+        <td><%= count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
