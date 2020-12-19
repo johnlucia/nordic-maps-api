@@ -27,7 +27,7 @@
             <td><%= trail.groomed %></td>
             <td><%= trail.length %></td>
             <td><%= trail.level %></td>
-            <td><%= trail.description %></td>
+            <td><%= trail.description&.truncate(100) %></td>
             <td><%= trail.coordinates.length %> Waypoints</td>
             <td>
                 <%= link_to t('.edit', :default => t("helpers.links.edit")),

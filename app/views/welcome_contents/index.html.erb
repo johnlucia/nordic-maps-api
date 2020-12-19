@@ -18,7 +18,7 @@
     <% @welcome_contents.each do |welcome_content| %>
       <tr>
         <td><%= welcome_content.heading %></td>
-        <td><%= welcome_content.body %></td>
+        <td><%= welcome_content.body&.truncate(100) %></td>
         <td><%= welcome_content.link_text %></td>
         <td><%= welcome_content.link_url %></td>
         <td><%= welcome_content.position %></td>

@@ -21,7 +21,7 @@
         <td><%= link_to shelter.id, shelter_path(shelter) %></td>
         <td><%= shelter.name %></td>
         <td><%= shelter.uid %></td>
-        <td><%= shelter.description %></td>
+        <td><%= shelter.description&.truncate(100) %></td>
         <td class="<%= shelter.active ? 'text-success' : 'text-danger' %>"><%= shelter.active %></td>
         <td><%= shelter.latitude %></td>
         <td><%= shelter.longitude %></td>
