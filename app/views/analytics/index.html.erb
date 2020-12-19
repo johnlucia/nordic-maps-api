@@ -10,10 +10,11 @@
   </thead>
   <tbody>
     <% @load_count.each do |day,count| %>
+      <% tag = (day.to_date.saturday? || day.to_date.sunday?) ? :strong : :span %>
       <tr>
-        <td><%= day %></td>
-        <td><%= day.to_date.strftime("%A") %></td>
-        <td><%= count %></td>
+        <td><%= content_tag(tag, day) %></td>
+        <td><%= content_tag(tag, day.to_date.strftime("%A")) %></td>
+        <td><%= content_tag(tag, count) %></td>
       </tr>
     <% end %>
   </tbody>
