@@ -13,7 +13,9 @@ RSpec.describe "WelcomeData", type: :request do
           'snowshoe' => [],
           'junctions' => [],
           'parking' => [],
-          'shelters' => [] }
+          'shelters' => [],
+          'points_of_interest' => []
+        }
       }
 
       it "returns empty arrays" do
@@ -66,6 +68,10 @@ RSpec.describe "WelcomeData", type: :request do
         Shelter.create!(name: "shelter 1", uid: "shelter-1", latitude: "44.5", longitude: "-121.5", active: true)
         Shelter.create!(name: "shelter 2", uid: "shelter-2", latitude: "44.6", longitude: "-121.6", active: true)
         Shelter.create!(name: "shelter 3", uid: "shelter-3", latitude: "44.7", longitude: "-121.7", active: false )
+
+        PointOfInterest.create!(name: "poi 1", uid: "poi-1", latitude: "44.5", longitude: "-121.5", active: true)
+        PointOfInterest.create!(name: "poi 2", uid: "poi-2", latitude: "44.6", longitude: "-121.6", active: true)
+        PointOfInterest.create!(name: "poi 3", uid: "poi-3", latitude: "44.7", longitude: "-121.7", active: false )
       end
 
       let(:payload) {
@@ -73,13 +79,14 @@ RSpec.describe "WelcomeData", type: :request do
         JSON.parse(response.body)
       }
 
-      let(:welcome_content) { payload['welcome_content'] }
-      let(:junctions)       { payload['junctions'] }
-      let(:sponsors)        { payload['sponsors'] }
-      let(:shelters)        { payload['shelters'] }
-      let(:trails)          { payload['trails'] }
-      let(:ungroomed)       { payload['ungroomed'] }
-      let(:snowshoe)        { payload['snowshoe'] }
+      let(:welcome_content)    { payload['welcome_content'] }
+      let(:junctions)          { payload['junctions'] }
+      let(:sponsors)           { payload['sponsors'] }
+      let(:shelters)           { payload['shelters'] }
+      let(:trails)             { payload['trails'] }
+      let(:ungroomed)          { payload['ungroomed'] }
+      let(:snowshoe)           { payload['snowshoe'] }
+      let(:points_of_interest) { payload['points_of_interest'] }
 
       context "Welcome Content:" do
         it "delivers welcome content in the correct order" do
@@ -117,6 +124,20 @@ RSpec.describe "WelcomeData", type: :request do
         end
 
         it "attaches a coordinate attribute to junctions" do
+          coordinate = junctions[0]['coordinate']
+          expect(coordinate['latitude']).to_not be nil
+          expect(coordinate['longitude']).to_not be nil
+        end
+      end
+
+      context "Points Of Interest:" do
+        it "delivers the correct POIs" do
+          names = points_of_interest.map { |item| item['name'] }
+          expect(names.length).to eq(2)
+          expect(names).to include("poi 1", "poi 2")
+        end
+
+        it "attaches a coordinate attribute to the POIs" do
           coordinate = junctions[0]['coordinate']
           expect(coordinate['latitude']).to_not be nil
           expect(coordinate['longitude']).to_not be nil
