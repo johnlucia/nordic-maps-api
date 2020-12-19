@@ -13,6 +13,7 @@ module Api
         @snowshoe = Trail.active_snowshoe
         @junctions = Junction.where(active: true)
         @shelters = Shelter.where(active: true)
+        @points_of_interest = PointOfInterest.where(active: true)
         @parking = []
       end
     end

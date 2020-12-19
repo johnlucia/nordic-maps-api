@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :sponsorship_levels
   resources :sponsors
   resources :analytics, only: [:index]
+  resources :points_of_interest
 
   namespace :api do
     namespace :v1 do

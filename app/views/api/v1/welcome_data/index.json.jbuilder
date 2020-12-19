@@ -12,4 +12,6 @@ json.junctions @junctions, :id, :name, :coordinate
 
 json.shelters @shelters, :id, :uid, :name, :description, :coordinate
 
+json.points_of_interest @points_of_interest, :id, :uid, :name, :description, :coordinate
+
 json.parking @parking, :id, :uid, :name, :description, :coordinate

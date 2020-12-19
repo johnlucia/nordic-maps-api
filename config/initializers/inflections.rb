@@ -10,6 +10,11 @@
 #   inflect.uncountable %w( fish sheep )
 # end
 
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular 'point of interest', 'points of interest'
+  inflect.irregular 'point_of_interest', 'points_of_interest'
+end
+
 # These inflection rules are supported but not enabled by default:
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'

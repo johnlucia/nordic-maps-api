@@ -1,13 +1,13 @@
-<%= form_for @shelter, :html => { :class => "form-horizontal shelter" } do |f| %>
-
-  <% if @shelter.errors.any? %>
+<%= form_for @point_of_interest, :html => { :class => "form-horizontal point_of_interest" } do |f| %>
+<%# :url => points_of_interest_path,  %>
+  <% if @point_of_interest.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@shelter.errors.count, "error") %> prohibited this shelter from being saved:</h3>
+        <h3 class="panel-title"><%= pluralize(@point_of_interest.errors.count, "error") %> prohibited this point_of_interest from being saved:</h3>
       </div>
       <div class="panel-body">
         <ul>
-        <% @shelter.errors.full_messages.each do |msg| %>
+        <% @point_of_interest.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
         </ul>
@@ -62,7 +62,7 @@
     <div class="col-lg-offset-2 col-lg-10">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                shelters_path, :class => 'btn btn-default' %>
+                points_of_interest_path, :class => 'btn btn-default' %>
     </div>
   </div>
 
