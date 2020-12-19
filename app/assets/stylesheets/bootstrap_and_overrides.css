@@ -18,3 +18,7 @@ img {
 .android-hack-wrap img{
   max-height:63px;
 }
+
+table a.btn-default, table a.btn-danger {
+  margin: 7px;
+}
