@@ -10,6 +10,10 @@ module Mappable
     { latitude: latitude, longitude: longitude }
   end
 
+  def kind
+    self.class.to_s.downcase
+  end
+
   def convert_coordinates
     self.latitude = latitude.to_f
     self.longitude = longitude.to_f

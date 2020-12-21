@@ -8,10 +8,10 @@ json.ungroomed @ungroomed, :id, :uid, :name, :color, :length, :level, :descripti
 
 json.snowshoe @snowshoe, :id, :uid, :name, :color, :length, :level, :description, :coordinates
 
-json.junctions @junctions, :id, :name, :coordinate
+json.junctions @junctions, :id, :name, :coordinate, :kind
 
-json.shelters @shelters, :id, :uid, :name, :description, :coordinate
+json.shelters @shelters, :id, :uid, :name, :description, :coordinate, :kind
 
-json.points_of_interest @points_of_interest, :id, :uid, :name, :description, :coordinate
+json.points_of_interest @points_of_interest, :id, :uid, :name, :description, :coordinate, :kind
 
-json.parking @parking, :id, :uid, :name, :description, :coordinate
+json.parking @parking, :id, :uid, :name, :description, :coordinate, :kind
