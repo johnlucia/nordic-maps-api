@@ -1,7 +1,12 @@
 class Selectable
+
+  # https://icons.expo.fyi/
   ICONS = [["Pin","md-pin"],["Check mark","md-checkmark-circle"],["People","md-people"],
     ["Camera","md-camera"],["Bed","md-bed"],["Megaphone","md-megaphone"],["Map","md-map"],
-    ["Restaurant","md-restaurant"],["Flag","md-flag"]]
+    ["Restaurant","md-restaurant"],["Flag","md-flag"],["Danger", "alert-circle"],
+    ["Bicycle","bicycle"],["Eye","eye"],["Flag 2", "golf"],["Help","help-circle"],
+    ["Image","image"],["Information","information-circle","Leaf","leaf"],["Location","location"],
+    ["Trail Sign","trail-sign"],["Warning","warning"]]
 
   COLORS = ["black","blue","brown","cyan","darkblue","darkgreen","gray","green","lightblue",
     "lightgreen","magenta","pink","purple","red","yellow"]
