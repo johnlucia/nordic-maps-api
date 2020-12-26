@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_19_214820) do
+ActiveRecord::Schema.define(version: 2020_12_25_215306) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 2020_12_19_214820) do
     t.decimal "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "icon"
+    t.string "color"
+    t.integer "size"
   end
 
   create_table "shelters", force: :cascade do |t|
