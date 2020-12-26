@@ -9,7 +9,7 @@ class PointsOfInterestController < ApplicationController
   end
 
   def new
-    @point_of_interest = PointOfInterest.new
+    @point_of_interest = PointOfInterest.new(PointOfInterest::DEFAULTS)
   end
 
   def edit
@@ -56,6 +56,6 @@ class PointsOfInterestController < ApplicationController
   end
 
   def point_of_interest_params
-    params.require(:point_of_interest).permit(:name, :uid, :description, :active, :latitude, :longitude)
+    params.require(:point_of_interest).permit(:name, :uid, :description, :active, :icon, :color, :size, :latitude, :longitude)
   end
 end
