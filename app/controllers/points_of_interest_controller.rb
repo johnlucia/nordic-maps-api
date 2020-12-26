@@ -9,7 +9,7 @@ class PointsOfInterestController < ApplicationController
   end
 
   def new
-    @point_of_interest = PointOfInterest.new(size: 25)
+    @point_of_interest = PointOfInterest.new(PointOfInterest::DEFAULTS)
   end
 
   def edit
