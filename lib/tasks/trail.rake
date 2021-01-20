@@ -5,15 +5,19 @@ namespace :trail do
     data=JSON.parse(file)
     
     data['features'].each_with_index do |track, index|
-      coordinates = track['geometry']['coordinates']
-      coordinates_array = coordinates.map { |coordinate| {latitude: coordinate[1], longitude: coordinate[0]} }
+      begin
+        coordinates = track['geometry']['coordinates']
+        coordinates_array = coordinates.map { |coordinate| {latitude: coordinate[1], longitude: coordinate[0]} }
 
-      trail = Trail.create( name: args.file_name,
-                            uid: "#{args.file_name}-#{index}",
-                            active: false,
-                            coordinates_json: coordinates_array.to_json )
+        trail = Trail.create( name: args.file_name,
+                              uid: "#{args.file_name}-#{index}",
+                              active: false,
+                              coordinates_json: coordinates_array.to_json )
 
-      puts trail.inspect
+        puts trail.inspect
+      rescue => error
+        puts "\n\n\n THAT DIDN'T WORK!!! \n\n\n"
+      end
     end
   end
 
