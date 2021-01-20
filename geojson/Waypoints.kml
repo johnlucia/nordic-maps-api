@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <Schema id="schema0" name="schema0">
+      <SimpleField name="Description" type="string"/>
+      <SimpleField name="pdfmaps_photos" type="string">
+        <displayName>Photos</displayName>
+      </SimpleField>
+    </Schema>
+    <Folder>
+      <styleUrl>#style0</styleUrl>
+      <name>Layer</name>
+      <ExtendedData>
+        <SchemaData schemaUrl="#schema0"/>
+      </ExtendedData>
+      <Placemark>
+        <name>Beaver pond</name>
+        <TimeStamp>
+          <when>2021-01-15T13:52:33-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5150491754415,43.2504407999735,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Cabin </name>
+        <TimeStamp>
+          <when>2021-01-15T13:58:26-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5150791162812,43.251101800097,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lookout</name>
+        <TimeStamp>
+          <when>2021-01-15T13:41:58-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5155203427647,43.2499497161789,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Lookout</name>
+        <TimeStamp>
+          <when>2021-01-15T14:03:23-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5150791162812,43.251101800097,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Old cemetery </name>
+        <TimeStamp>
+          <when>2021-01-15T14:26:05-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5155703666063,43.2502472663551,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Old foundations</name>
+        <TimeStamp>
+          <when>2021-01-15T13:59:08-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5150791162812,43.251101800097,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Sheep meadow</name>
+        <TimeStamp>
+          <when>2021-01-15T13:45:12-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5155203427647,43.2499497161789,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Shepherd’s hut</name>
+        <TimeStamp>
+          <when>2021-01-15T14:06:38-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5159976695796,43.2503267036753,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Tree house </name>
+        <TimeStamp>
+          <when>2021-01-15T14:01:33-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5150791162812,43.251101800097,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Viewpoint</name>
+        <TimeStamp>
+          <when>2021-01-15T13:48:56-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5152530228425,43.2509598314882,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Viewpoint</name>
+        <TimeStamp>
+          <when>2021-01-15T14:10:30-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5155703666063,43.2502472663551,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Style id="style0">
+      <IconStyle>
+        <color>7f0099ff</color>
+        <Icon>
+          <href>http://download.avenza.com/images/pdfmaps_icons/pin-red-inground.png</href>
+        </Icon>
+        <hotSpot x="0.5" xunits="fraction" y="0.5" yunits="fraction"/>
+      </IconStyle>
+      <LineStyle>
+        <color>ff0099ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f0099ff</color>
+      </PolyStyle>
+    </Style>
+    <Style id="style1">
+      <IconStyle>
+        <Icon>
+          <href>http://download.avenza.com/images/pdfmaps_icons/pin-red-inground.png</href>
+        </Icon>
+        <hotSpot x="0.5" xunits="fraction" y="0.5" yunits="fraction"/>
+      </IconStyle>
+    </Style>
+  </Document>
+</kml>

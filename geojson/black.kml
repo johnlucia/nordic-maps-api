@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2">
+  <Document>
+    <Schema id="schema0" name="schema0">
+      <SimpleField name="Description" type="string"/>
+      <SimpleField name="pdfmaps_photos" type="string">
+        <displayName>Photos</displayName>
+      </SimpleField>
+    </Schema>
+    <Folder>
+      <styleUrl>#style0</styleUrl>
+      <name>Layer</name>
+      <ExtendedData>
+        <SchemaData schemaUrl="#schema0"/>
+      </ExtendedData>
+      <Placemark>
+        <name>Track 1</name>
+        <TimeStamp>
+          <when>2021-01-14T15:40:56-05:00</when>
+        </TimeStamp>
+        <styleUrl>#style1</styleUrl>
+        <gx:Track>
+          <when>2021-01-14T15:40:57-05:00</when>
+          <when>2021-01-14T15:41:00-05:00</when>
+          <when>2021-01-14T15:41:03-05:00</when>
+          <when>2021-01-14T15:41:05-05:00</when>
+          <when>2021-01-14T15:41:09-05:00</when>
+          <when>2021-01-14T15:41:11-05:00</when>
+          <when>2021-01-14T15:41:13-05:00</when>
+          <when>2021-01-14T15:41:15-05:00</when>
+          <when>2021-01-14T15:41:17-05:00</when>
+          <when>2021-01-14T15:41:19-05:00</when>
+          <when>2021-01-14T15:41:21-05:00</when>
+          <when>2021-01-14T15:41:23-05:00</when>
+          <when>2021-01-14T15:41:25-05:00</when>
+          <when>2021-01-14T15:41:27-05:00</when>
+          <when>2021-01-14T15:41:29-05:00</when>
+          <when>2021-01-14T15:41:31-05:00</when>
+          <when>2021-01-14T15:41:33-05:00</when>
+          <when>2021-01-14T15:41:37-05:00</when>
+          <when>2021-01-14T15:41:39-05:00</when>
+          <gx:coord>-72.531609002841 43.2636468656292 330.1328125</gx:coord>
+          <gx:coord>-72.531637735246 43.2636456331662 329.91943359375</gx:coord>
+          <gx:coord>-72.5316603761236 43.2636323385843 329.797485351562</gx:coord>
+          <gx:coord>-72.5316784455114 43.2636163425968 329.756011962891</gx:coord>
+          <gx:coord>-72.531661923128 43.2636000365543 331.039855957031</gx:coord>
+          <gx:coord>-72.5316076882494 43.2636040227711 330.714508056641</gx:coord>
+          <gx:coord>-72.5315293653671 43.2636321228096 330.405120849609</gx:coord>
+          <gx:coord>-72.5314436710254 43.2636671927764 330.849731445312</gx:coord>
+          <gx:coord>-72.5313593149098 43.2636920259471 328.634552001953</gx:coord>
+          <gx:coord>-72.5312599670785 43.2637221293958 328.681579589844</gx:coord>
+          <gx:coord>-72.5311921101188 43.2637346716031 329.102996826172</gx:coord>
+          <gx:coord>-72.5311043552661 43.2637501960234 330.050354003906</gx:coord>
+          <gx:coord>-72.5310167745419 43.2637791207364 329.343780517578</gx:coord>
+          <gx:coord>-72.530918340734 43.2638157579395 328.7470703125</gx:coord>
+          <gx:coord>-72.530813128404 43.2638351878209 328.577911376953</gx:coord>
+          <gx:coord>-72.5307793113797 43.2638008768318 328.65576171875</gx:coord>
+          <gx:coord>-72.5307261669223 43.2637485211914 326.345458984375</gx:coord>
+          <gx:coord>-72.5306846750272 43.2637425914929 330.362396240234</gx:coord>
+          <gx:coord>-72.5306489727347 43.2637540706476 331.059936523438</gx:coord>
+          <gx:angles>-1 -1 -1</gx:angles>
+          <gx:angles>321.837707519531 -1 -1</gx:angles>
+          <gx:angles>-1 -1 -1</gx:angles>
+          <gx:angles>-1 -1 -1</gx:angles>
+          <gx:angles>115.937507629395 -1 -1</gx:angles>
+          <gx:angles>80.1107635498047 -1 -1</gx:angles>
+          <gx:angles>63.0479278564453 -1 -1</gx:angles>
+          <gx:angles>61.3609886169434 -1 -1</gx:angles>
+          <gx:angles>58.8712348937988 -1 -1</gx:angles>
+          <gx:angles>75.367057800293 -1 -1</gx:angles>
+          <gx:angles>79.8525772094727 -1 -1</gx:angles>
+          <gx:angles>78.2684020996094 -1 -1</gx:angles>
+          <gx:angles>67.360954284668 -1 -1</gx:angles>
+          <gx:angles>59.9457817077637 -1 -1</gx:angles>
+          <gx:angles>74.3639907836914 -1 -1</gx:angles>
+          <gx:angles>114.284774780273 -1 -1</gx:angles>
+          <gx:angles>145.385040283203 -1 -1</gx:angles>
+          <gx:angles>293.856994628906 -1 -1</gx:angles>
+          <gx:angles>293.856994628906 -1 -1</gx:angles>
+          <ExtendedData>
+            <SchemaData schemaUrl="#track_schema">
+              <gx:SimpleArrayData name="speed">
+                <gx:value>0.148752</gx:value>
+                <gx:value>0.776861</gx:value>
+                <gx:value>0.785022</gx:value>
+                <gx:value>1.15157</gx:value>
+                <gx:value>0.563327</gx:value>
+                <gx:value>2.20694</gx:value>
+                <gx:value>3.53499</gx:value>
+                <gx:value>3.97981</gx:value>
+                <gx:value>3.6838</gx:value>
+                <gx:value>4.35656</gx:value>
+                <gx:value>2.8344</gx:value>
+                <gx:value>3.65622</gx:value>
+                <gx:value>3.89346</gx:value>
+                <gx:value>4.47562</gx:value>
+                <gx:value>4.39451</gx:value>
+                <gx:value>2.34808</gx:value>
+                <gx:value>3.61974</gx:value>
+                <gx:value>0.855952</gx:value>
+                <gx:value>1.58008</gx:value>
+              </gx:SimpleArrayData>
+              <gx:SimpleArrayData name="horizontal_accuracy">
+                <gx:value>14.3726</gx:value>
+                <gx:value>12.8763</gx:value>
+                <gx:value>14.2379</gx:value>
+                <gx:value>7.23835</gx:value>
+                <gx:value>4.8428</gx:value>
+                <gx:value>4.85966</gx:value>
+                <gx:value>4.80102</gx:value>
+                <gx:value>4.8173</gx:value>
+                <gx:value>4.85941</gx:value>
+                <gx:value>4.88118</gx:value>
+                <gx:value>4.96145</gx:value>
+                <gx:value>4.95975</gx:value>
+                <gx:value>4.95769</gx:value>
+                <gx:value>4.93915</gx:value>
+                <gx:value>4.91205</gx:value>
+                <gx:value>4.80487</gx:value>
+                <gx:value>4.78208</gx:value>
+                <gx:value>4.75169</gx:value>
+                <gx:value>4.69109</gx:value>
+              </gx:SimpleArrayData>
+              <gx:SimpleArrayData name="vertical_accuracy">
+                <gx:value>23.0641</gx:value>
+                <gx:value>20.7979</gx:value>
+                <gx:value>23.0795</gx:value>
+                <gx:value>12.427</gx:value>
+                <gx:value>3.22053</gx:value>
+                <gx:value>3.19504</gx:value>
+                <gx:value>3.28249</gx:value>
+                <gx:value>3.25855</gx:value>
+                <gx:value>3.19542</gx:value>
+                <gx:value>3.16205</gx:value>
+                <gx:value>3.03456</gx:value>
+                <gx:value>3.03734</gx:value>
+                <gx:value>3.04069</gx:value>
+                <gx:value>3.07073</gx:value>
+                <gx:value>3.1139</gx:value>
+                <gx:value>3.27684</gx:value>
+                <gx:value>3.31003</gx:value>
+                <gx:value>3.3535</gx:value>
+                <gx:value>3.43777</gx:value>
+              </gx:SimpleArrayData>
+            </SchemaData>
+          </ExtendedData>
+        </gx:Track>
+      </Placemark>
+    </Folder>
+    <Style id="style0">
+      <IconStyle>
+        <color>7f0099ff</color>
+        <Icon>
+          <href>http://download.avenza.com/images/pdfmaps_icons/pin-red-inground.png</href>
+        </Icon>
+        <hotSpot x="0.5" xunits="fraction" y="0.5" yunits="fraction"/>
+      </IconStyle>
+      <LineStyle>
+        <color>ff0099ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f0099ff</color>
+      </PolyStyle>
+    </Style>
+    <Style id="style1">
+      <LineStyle>
+        <color>ff0099ff</color>
+        <width>4</width>
+      </LineStyle>
+      <PolyStyle>
+        <color>7f0099ff</color>
+      </PolyStyle>
+    </Style>
+    <Schema id="track_schema" name="track_schema">
+      <gx:SimpleArrayField name="speed" type="float">
+        <displayName>speed</displayName>
+      </gx:SimpleArrayField>
+      <gx:SimpleArrayField name="horizontal_accuracy" type="float">
+        <displayName>horizontal_accuracy</displayName>
+      </gx:SimpleArrayField>
+      <gx:SimpleArrayField name="vertical_accuracy" type="float">
+        <displayName>vertical_accuracy</displayName>
+      </gx:SimpleArrayField>
+      <gx:SimpleArrayField name="source" type="string">
+        <displayName>source</displayName>
+      </gx:SimpleArrayField>
+    </Schema>
+  </Document>
+</kml>
