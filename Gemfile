@@ -17,6 +17,7 @@ gem 'redis-namespace'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem "twitter-bootstrap-rails"
+gem 'jquery-rails'
 
 gem 'browser'
 
