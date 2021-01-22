@@ -24,7 +24,7 @@ module Mappable
     begin
       lat = latitude.to_f
       lon = longitude.to_f
-      valid = lat.between?(42,44) && lon.between?(-71, -73)
+      valid = lat.between?(42, 44) && lon.between?(-73, -71)
     rescue
       valid = false
     end
