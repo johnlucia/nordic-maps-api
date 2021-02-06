@@ -8,8 +8,9 @@ class Selectable
     ["Image","image"],["Information","information-circle","Leaf","leaf"],["Location","location"],
     ["Trail Sign","trail-sign"],["Warning","warning"]]
 
-  COLORS = ["black","blue","brown","cyan","darkblue","darkgreen","gray","green","lightblue",
-    "lightgreen","magenta","pink","purple","red","yellow"]
+  COLORS = ["black","blue","brown","cyan","darkblue","darkgreen","gray","green","hotpink",
+    "lightblue","lightgreen","magenta","pink","purple","red","tomato","turquoise","violet",
+    "yellow"]
 
   ALL_COLORS = ["aliceblue","antiquewhite","aqua","aquamarine","azure","beige","bisque","black",
     "blanchedalmond","blue","blueviolet","brown","burlywood","cadetblue","chartreuse","chocolate",
