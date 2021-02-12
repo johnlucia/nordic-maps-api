@@ -1,12 +1,18 @@
 class Selectable
 
   # https://icons.expo.fyi/
-  ICONS = [["Pin","md-pin"],["Check mark","md-checkmark-circle"],["People","md-people"],
+  IONICONS = [["Pin","md-pin"],["Check mark","md-checkmark-circle"],["People","md-people"],
     ["Camera","md-camera"],["Bed","md-bed"],["Megaphone","md-megaphone"],["Map","md-map"],
     ["Restaurant","md-restaurant"],["Flag","md-flag"],["Danger", "alert-circle"],
     ["Bicycle","bicycle"],["Eye","eye"],["Flag 2", "golf"],["Help","help-circle"],
-    ["Image","image"],["Information","information-circle","Leaf","leaf"],["Location","location"],
+    ["Image","image"],["Information","information-circle"],["Leaf","leaf"],["Location","location"],
     ["Trail Sign","trail-sign"],["Warning","warning"]]
+
+  MATERIAL_COMMUNITY_ICONS = [["Binoculars","binoculars"],["Diamond","cards-diamond"]]
+
+  DOUBLE_DIAMOND = [["Double Diamond","double-diamond"]]
+
+  ICONS = IONICONS + MATERIAL_COMMUNITY_ICONS # + DOUBLE_DIAMOND
 
   COLORS = ["black","blue","brown","cyan","darkblue","darkgray","darkgreen","gray","green","hotpink",
     "lightblue","lightgreen","magenta","orange","orangered","pink","purple","red","tomato","turquoise",
@@ -32,4 +38,10 @@ class Selectable
     "seagreen","seashell","sienna","silver","skyblue","slateblue","slategray","snow","springgreen",
     "steelblue","tan","teal","thistle","tomato","turquoise","violet","wheat","white","whitesmoke",
     "yellow","yellowgreen"]
+
+  def self.source_of(icon)
+    return "Ionicons" if IONICONS.map(&:last).include?(icon)
+    return "MaterialCommunityIcons" if MATERIAL_COMMUNITY_ICONS.map(&:last).include?(icon)
+    return "DoubleDiamond" if DOUBLE_DIAMOND.map(&:last).include?(icon)
+  end
 end
