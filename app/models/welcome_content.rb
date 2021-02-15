@@ -5,9 +5,9 @@ class WelcomeContent < ApplicationRecord
 
   def has_valid_href?
     return true if link_url.blank?
-    
+
     uri = URI.parse link_url
     valid = [URI::HTTP, URI::HTTPS, URI::MailTo].include? uri.class
-    valid || errors.add(:link_url, "Link URL not valid. Valid formats include: `http://www.link.com`, `https://link.com`, and `mailto:bob@gmail.com`")
+    valid || errors.add(:link_url, 'not valid. A valid link will usually begin with one of the following: "http://", "https://", or "mailto:"')
   end
 end
