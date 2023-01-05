@@ -26,15 +26,15 @@ RSpec.describe "WelcomeData", type: :request do
 
     context "JSON Payloads" do
       before(:each) do
-        Junction.create!(name: "Active Junction 1", latitude: "44.5", longitude: "-121.5", active: true)
-        Junction.create!(name: "Active Junction 2", latitude: "44.6", longitude: "-121.6", active: true)
-        Junction.create!(name: "Inactive Junction", latitude: "44.7", longitude: "-121.7", active: false)
+        Junction.create!(name: "Active Junction 1", latitude: "43.5", longitude: "-72.5", active: true)
+        Junction.create!(name: "Active Junction 2", latitude: "43.6", longitude: "-72.6", active: true)
+        Junction.create!(name: "Inactive Junction", latitude: "43.7", longitude: "-72.7", active: false)
       
-        Sponsor.create!(name: "Second Sponsor", logo_url: "Logo Url", link_url: "Link Url",
+        Sponsor.create!(name: "Second Sponsor", logo_url: "Logo Url", link_url: "http://link-url.com",
                         position: 3, active: true, description: "MyText", notes: "MyText" )
-        Sponsor.create!(name: "First Sponsor", logo_url: "Logo Url", link_url: "Link Url",
+        Sponsor.create!(name: "First Sponsor", logo_url: "Logo Url", link_url: "http://link-url.com",
                         position: 2, active: true, description: "MyText", notes: "MyText" )
-        Sponsor.create!(name: "Inactive Sponsor", logo_url: "Logo Url", link_url: "Link Url",
+        Sponsor.create!(name: "Inactive Sponsor", logo_url: "Logo Url", link_url: "http://link-url.com",
                         position: 1, active: false, description: "MyText", notes: "MyText")
 
         Trail.create!(name: "Trail 1", uid: SecureRandom.hex, color: "Color", length: "Length", level: 2,
@@ -59,19 +59,19 @@ RSpec.describe "WelcomeData", type: :request do
                       trail_type: "snowshoe", level: 2, active: false, description: "MyText", coordinates_json: valid_trail_json)
 
         WelcomeContent.create!( heading: "Second Section", body: "MyText", link_text: "Link Text",
-                                link_url: "Link Url", position: 2, active: true )
+                                link_url: "http://link-url.com", position: 2, active: true )
         WelcomeContent.create!( heading: "First Section", body: "MyText", link_text: "Link Text",
-                                link_url: "Link Url", position: 1, active: true )
+                                link_url: "http://link-url.com", position: 1, active: true )
         WelcomeContent.create!( heading: "Inactive Section", body: "MyText", link_text: "Link Text",
-                                link_url: "Link Url", position: 1, active: false )
+                                link_url: "http://link-url.com", position: 1, active: false )
 
-        Shelter.create!(name: "shelter 1", uid: "shelter-1", latitude: "44.5", longitude: "-121.5", active: true)
-        Shelter.create!(name: "shelter 2", uid: "shelter-2", latitude: "44.6", longitude: "-121.6", active: true)
-        Shelter.create!(name: "shelter 3", uid: "shelter-3", latitude: "44.7", longitude: "-121.7", active: false )
+        Shelter.create!(name: "shelter 1", uid: "shelter-1", latitude: "43.5", longitude: "-72.5", active: true)
+        Shelter.create!(name: "shelter 2", uid: "shelter-2", latitude: "43.6", longitude: "-72.6", active: true)
+        Shelter.create!(name: "shelter 3", uid: "shelter-3", latitude: "43.7", longitude: "-72.7", active: false )
 
-        PointOfInterest.create!(name: "poi 1", uid: "poi-1", latitude: "44.5", longitude: "-121.5", active: true)
-        PointOfInterest.create!(name: "poi 2", uid: "poi-2", latitude: "44.6", longitude: "-121.6", active: true)
-        PointOfInterest.create!(name: "poi 3", uid: "poi-3", latitude: "44.7", longitude: "-121.7", active: false )
+        PointOfInterest.create!(name: "poi 1", uid: "poi-1", latitude: "43.5", longitude: "-72.5", active: true)
+        PointOfInterest.create!(name: "poi 2", uid: "poi-2", latitude: "43.6", longitude: "-72.6", active: true)
+        PointOfInterest.create!(name: "poi 3", uid: "poi-3", latitude: "43.7", longitude: "-72.7", active: false )
       end
 
       let(:payload) {
